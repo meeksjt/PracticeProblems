@@ -1,5 +1,7 @@
 from hangmanfigure import HangmanFigure
 from random import randint
+from sys import argv
+
 
 class Hangman(object):
     """
@@ -27,6 +29,7 @@ class Hangman(object):
         """
         with open(filename, "r") as f:
             content = f.readlines()
+        print content
         # Get the word for the Hangman game and create a new game
         word = content[randint(0, len(content) - 1)].strip()
         return word
@@ -47,12 +50,11 @@ class Hangman(object):
         """
 
         char_in_word = False
-
         if letter not in self.hangman_word:
             return False
         else:
             for i in range(0, len(self.hangman_word)):
-                if letter == self.hangman_word:
+                if letter == self.hangman_word[i]:
                     self.word_guess[i * 2] = letter
         return True
 
@@ -93,7 +95,7 @@ class Hangman(object):
             if '_' not in self.word_guess:
                 print "Congratulations!  You won!"
                 break
-                
+
         # User lost
         else:
             print 'Aww, too bad!  Better luck next time!'
@@ -117,9 +119,8 @@ class Hangman(object):
         print '\n\n'
 
 
-def main():
-    hangman = Hangman('../words.txt')
+def main(args):
+    hangman = Hangman(args[1])
     hangman.game_loop()
 
-if __name__ == '__main__':
-    main()
+main(argv)
