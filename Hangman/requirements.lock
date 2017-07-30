@@ -1,0 +1,8 @@
+# WARNING: This file is auto-generated.
+# Edit requirements.txt instead and run 'make freeze' to regenerate this file.
+certifi==2017.7.27.1
+chardet==3.0.4
+docutils==0.13.1
+idna==2.5
+requests==2.18.2
+urllib3==1.22
