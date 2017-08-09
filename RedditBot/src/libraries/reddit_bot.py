@@ -1,6 +1,8 @@
-import praw
-import config
 from sys import argv
+
+import praw
+
+import config
 
 
 class RedditBot():
@@ -23,7 +25,7 @@ class RedditBot():
 
 def main(args):
     r = RedditBot()
-    r.check_post_titles('buildapcsales', 1000, 'PSU')
+    r.check_post_titles('buildapcsales', 100, 'GPU')
 
 main(argv)
 
