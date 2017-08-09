@@ -1,0 +1,3 @@
+--variable SUBREDDIT_NAME:"buildapcsales"
+--variable QUERY_NUMBER:50
+--variable SEARCH_TERM:"GPU"
